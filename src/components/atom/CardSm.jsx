@@ -27,7 +27,14 @@ const CardSm = ({
               <p className="my-1">{release}</p>
               <p className="flex items-center gap-1">
                 <Star color="warning" /> {rating} (
-                {<NumberFormat displayType="text" value={totalUserRating} />})
+                {
+                  <NumberFormat
+                    displayType="text"
+                    value={totalUserRating}
+                    thousandSeparator
+                  />
+                }
+                )
               </p>
             </div>
             <div>

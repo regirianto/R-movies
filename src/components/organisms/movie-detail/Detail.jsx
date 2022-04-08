@@ -4,7 +4,7 @@ import moment from "moment";
 
 const Detail = ({ status, releaseDate, budget, revenue }) => {
   return (
-    <div className="md:w-4/12 flex md:flex-col flex-row w-full p-5 gap-4 justify-evenly md:text-left text-center">
+    <div className="md:w-4/12 flex flex-col w-full p-5 gap-4 justify-evenly">
       <div>
         <p className="font-semibold text-lg mb-1">Status</p>
         <p>{status}</p>

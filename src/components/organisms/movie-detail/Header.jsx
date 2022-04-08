@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { Star } from "@mui/icons-material";
+import NumberFormat from "react-number-format";
 
 const Header = ({
   background,
@@ -36,12 +37,19 @@ const Header = ({
             <p>
               <Star color="warning" />
             </p>
-            <p>
-              {rating} ({ratingCount})
+            <p className="my-2">
+              {rating} (
+              {
+                <NumberFormat
+                  displayType="text"
+                  value={ratingCount}
+                  thousandSeparator
+                />
+              }
+              )
             </p>
           </div>
           <div className=" md:text-lg text-sm ">
-            {moment({ releaseDate }).format("YYYY")}
             <ul className="flex flex-wrap md:gap-1">
               {genres.map((category) => (
                 <li className="m-1 " key={category.id}>

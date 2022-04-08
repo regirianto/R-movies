@@ -17,7 +17,7 @@ const CardCategory = () => {
                 title={movie.title}
                 img={`${URL_IMG}/${movie.poster_path}`}
                 id={movie.id}
-                language={movie.original_language}
+                language={movie.original_language.toUpperCase()}
                 rating={movie.vote_average}
                 release={movie.release_date}
                 totalUserRating={movie.vote_count}

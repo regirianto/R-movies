@@ -2,6 +2,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import LanguageIcon from "@mui/icons-material/Language";
 import { Link } from "react-router-dom";
+import NumberFormat from "react-number-format";
 
 const NowPlayingCard = ({
   title,
@@ -27,7 +28,15 @@ const NowPlayingCard = ({
             <p className="text-2xl font-semibold">{title}</p>
             <p className="text-sm font-light my-1">{year}</p>
             <p className="text-sm font-light flex items-center gap-1">
-              <StarIcon color="warning" /> {rating} ({ratingCount})
+              <StarIcon color="warning" /> {rating} (
+              {
+                <NumberFormat
+                  displayType="text"
+                  value={ratingCount}
+                  thousandSeparator
+                />
+              }
+              )
             </p>
           </div>
           <div>
