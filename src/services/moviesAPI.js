@@ -78,7 +78,7 @@ export const getSimilarMovies = async (movieId) => {
 };
 
 export const getMoviesByCategory = async (categoryID) => {
-  const url = `${ROOT_URL}/discover/movie/?api_key=${API_KEY}&with_genres=${categoryID}`;
+  const url = `${ROOT_URL}/discover/movie?api_key=${API_KEY}&with_genres=${categoryID}`;
   const response = await fetch(url);
   const category = await response.json();
   if (response.status < 300) {
