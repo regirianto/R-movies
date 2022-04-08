@@ -6,6 +6,7 @@ import {
   getCastMovies,
   getSimilarMovies,
   getMoviesByCategory,
+  getMoviesBykeyword,
 } from "../../../services/moviesAPI";
 import {
   SET_CATEGORY_ID,
@@ -15,6 +16,7 @@ import {
   SET_CAST_MOVIE,
   SET_SIMILIAR_MOVIES,
   SET_CATEGORY_MOVIES,
+  SET_SEARCH_MOVIE,
 } from "./type";
 
 export const setNowPlayingMovies = () => async (distpatch) => {
@@ -75,6 +77,15 @@ export const setCategoryMovie = (categoryId) => async (dispatch) => {
   try {
     const categoryMovies = await getMoviesByCategory(categoryId);
     dispatch({ type: SET_CATEGORY_MOVIES, payload: categoryMovies });
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+export const setSearchMovie = (keyword, page) => async (dispatch) => {
+  try {
+    const searchMovie = await getMoviesBykeyword(keyword, page);
+    dispatch({ type: SET_SEARCH_MOVIE, payload: searchMovie });
   } catch (error) {
     alert(error.message);
   }

@@ -10,7 +10,7 @@ const Cast = () => {
     <div className="">
       <Swipper sm={3.3} md={4.3} lg={5.3}>
         {castMovie.map((cast) => (
-          <SwiperSlide>
+          <SwiperSlide key={cast.id}>
             <div className="">
               <img
                 src={

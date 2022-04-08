@@ -89,3 +89,22 @@ export const getMoviesByCategory = async (categoryID) => {
     throw error;
   }
 };
+
+export const getMoviesBykeyword = async (keyword, page = 1) => {
+  const url = `${ROOT_URL}/search/movie?api_key=${API_KEY}&query=${keyword}&page=${page}`;
+  const response = await fetch(url);
+  const responseMovie = await response.json();
+
+  if (response.status < 300 && responseMovie.results.length > 0) {
+    return responseMovie;
+  }
+  if (response.status < 300 && responseMovie.results.length === 0) {
+    const error = new Error();
+    error.message = "Movie Not Found";
+    throw error;
+  } else {
+    const error = new Error();
+    error.message = responseMovie.status_message;
+    throw error;
+  }
+};

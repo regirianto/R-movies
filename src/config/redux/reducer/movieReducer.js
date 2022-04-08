@@ -6,6 +6,9 @@ import {
   SET_CAST_MOVIE,
   SET_SIMILIAR_MOVIES,
   SET_CATEGORY_MOVIES,
+  SET_SEARCH_MOVIE,
+  SET_PAGE,
+  SET_KEYWORD,
 } from "../action/type";
 
 const movieState = {
@@ -16,6 +19,9 @@ const movieState = {
   movieID: {},
   castMovie: [],
   similarMovies: [],
+  searchMovie: {},
+  page: 1,
+  keyword: "",
 };
 
 const moviesReducer = (state = movieState, action) => {
@@ -59,6 +65,24 @@ const moviesReducer = (state = movieState, action) => {
     return {
       ...state,
       categoryMovies: action.payload,
+    };
+  }
+  if (action.type === SET_SEARCH_MOVIE) {
+    return {
+      ...state,
+      searchMovie: action.payload,
+    };
+  }
+  if (action.type === SET_PAGE) {
+    return {
+      ...state,
+      page: action.value,
+    };
+  }
+  if (action.type === SET_KEYWORD) {
+    return {
+      ...state,
+      keyword: action.value,
     };
   }
   return state;

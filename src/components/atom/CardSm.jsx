@@ -2,6 +2,7 @@ import { Star } from "@mui/icons-material";
 import LanguageIcon from "@mui/icons-material/Language";
 import React from "react";
 import { Link } from "react-router-dom";
+import NumberFormat from "react-number-format";
 
 const CardSm = ({
   title,
@@ -11,21 +12,22 @@ const CardSm = ({
   totalUserRating,
   language,
   id,
-  wImg,
+  addClassName,
 }) => {
   return (
     <Link to={`/movie/${id}`}>
-      <div className="overflow-hidden">
+      <div className={`overflow-hidden ${addClassName}`}>
         <div className="">
-          <img src={img} className="rounded-2xl " width={wImg} alt="" />
+          <img src={img} className="rounded-2xl " alt="" />
         </div>
         <div className="font-light text-sm p-2  ">
-          <p className="text-xl font-semibold my-1">{title}</p>
+          <p className="text-xl font-semibold my-1 truncate">{title}</p>
           <div className="flex md:flex-row flex-col justify-between">
             <div className="">
               <p className="my-1">{release}</p>
               <p className="flex items-center gap-1">
-                <Star color="warning" /> {rating} ({totalUserRating})
+                <Star color="warning" /> {rating} (
+                {<NumberFormat displayType="text" value={totalUserRating} />})
               </p>
             </div>
             <div className="">

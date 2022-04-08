@@ -5,3 +5,6 @@ export const SET_MOVIE_ID = "SET_MOVIE_ID";
 export const SET_CAST_MOVIE = "SET_CAST_MOVIE";
 export const SET_SIMILIAR_MOVIES = "SET_SIMILIAR_MOVIES";
 export const SET_CATEGORY_MOVIES = "SET_CATEGORY_MOVIES";
+export const SET_SEARCH_MOVIE = "SET_SEARCH_MOVIE";
+export const SET_PAGE = "SET_PAGE";
+export const SET_KEYWORD = "SET_KEYWORD";
