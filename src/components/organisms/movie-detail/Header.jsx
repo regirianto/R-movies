@@ -30,7 +30,7 @@ const Header = ({
           className="md:w-[220px] w-[190px] rounded-2xl  "
           alt={title}
         />
-        <div className="">
+        <div>
           <p className="md:text-5xl text-base font-semibold">{title}</p>
           <div className="flex items-center gap-1 md:text-base text-sm">
             <p>

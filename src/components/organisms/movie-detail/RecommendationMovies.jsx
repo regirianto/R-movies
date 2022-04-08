@@ -11,7 +11,7 @@ const RecommendationMovies = () => {
 
   const { similarMovies } = useSelector((state) => state);
   return (
-    <div className="">
+    <div>
       <MovieSection title="Recommendations Movies">
         <Swipper sm={1.2} md={2.2} lg={3.2} space={15}>
           {similarMovies.map((movie) => (

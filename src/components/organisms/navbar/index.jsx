@@ -8,8 +8,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SET_KEYWORD, SET_PAGE } from "../../../config/redux/action/type";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -25,13 +26,11 @@ const Navbar = () => {
     <div className="flex px-5 py-4 items-center justify-between bg-[#f8f9fa] ">
       <div className="flex">
         <div className="text-4xl font-bold text-primary tracking-wider">
-          <Link to={"/"}>
-            <p className="drop-shadow-xl">R-Movies</p>
-          </Link>
+          <Logo />
         </div>
       </div>
-      <div className="">
-        <FormControl variant="outlined" className="">
+      <div>
+        <FormControl variant="outlined">
           <InputLabel htmlFor="search">Search Movies</InputLabel>
           <OutlinedInput
             id="search"
@@ -39,6 +38,7 @@ const Navbar = () => {
             onChange={(e) =>
               dispatch({ type: SET_KEYWORD, value: e.target.value })
             }
+            onKeyDownCapture={(e) => (e.key === "Enter" ? onSearch() : false)}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton edge="end" onClick={onSearch}>

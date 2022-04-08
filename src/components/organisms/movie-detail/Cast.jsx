@@ -7,11 +7,11 @@ const Cast = () => {
   const IMG_URL = process.env.REACT_APP_IMG_URL;
   const { castMovie } = useSelector((state) => state);
   return (
-    <div className="">
+    <div>
       <Swipper sm={3.3} md={4.3} lg={5.3}>
         {castMovie.map((cast) => (
           <SwiperSlide key={cast.id}>
-            <div className="">
+            <div>
               <img
                 src={
                   cast.profile_path

@@ -26,7 +26,7 @@ const MovieDetail = () => {
   if (movieID.id !== Number(id) || castMovie.length === 0)
     return <LoadingScreen />;
   return (
-    <div className="">
+    <div>
       <Header
         title={movieID.title}
         releaseDate={movieID.release_date}

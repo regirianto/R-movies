@@ -5,15 +5,15 @@ import moment from "moment";
 const Detail = ({ status, releaseDate, budget, revenue }) => {
   return (
     <div className="md:w-4/12 flex md:flex-col flex-row w-full p-5 gap-4 justify-evenly md:text-left text-center">
-      <div className="">
+      <div>
         <p className="font-semibold text-lg mb-1">Status</p>
         <p>{status}</p>
       </div>
-      <div className="">
+      <div>
         <p className="font-semibold text-lg mb-1">Release Date</p>
         <p>{moment(releaseDate).format("MMMM DD YYYY")}</p>
       </div>
-      <div className="">
+      <div>
         <p className="font-semibold text-lg mb-1">Budget </p>
         <p>
           {
@@ -26,7 +26,7 @@ const Detail = ({ status, releaseDate, budget, revenue }) => {
           }
         </p>
       </div>
-      <div className="">
+      <div>
         <p className="font-semibold text-lg mb-1">Revenue</p>
         <p>
           {

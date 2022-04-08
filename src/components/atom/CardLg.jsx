@@ -14,8 +14,8 @@ const NowPlayingCard = ({
 }) => {
   return (
     <Link to={`/movie/${id}`}>
-      <div className="">
-        <div className="">
+      <div>
+        <div>
           <img
             src={img}
             className="rounded-2xl w-[500px] object-cover"
@@ -23,14 +23,14 @@ const NowPlayingCard = ({
           />
         </div>
         <div className="flex justify-between items-center p-2">
-          <div className="">
+          <div>
             <p className="text-2xl font-semibold">{title}</p>
             <p className="text-sm font-light my-1">{year}</p>
             <p className="text-sm font-light flex items-center gap-1">
               <StarIcon color="warning" /> {rating} ({ratingCount})
             </p>
           </div>
-          <div className="">
+          <div>
             <p className="text-sm flex items-center gap-1">
               <LanguageIcon /> {language}
             </p>
