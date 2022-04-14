@@ -18,6 +18,9 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const onSearch = () => {
+    if (!keyword) {
+      return alert("Please fill the search form");
+    }
     dispatch({ type: SET_PAGE, value: 1 });
     navigate(`/movie?query=${keyword}`);
   };

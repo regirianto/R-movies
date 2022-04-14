@@ -11,7 +11,7 @@ const BadgeCategory = ({ currentCategory, setCurrentCategory }) => {
 
   const { genres } = categoryMovieID;
   return (
-    <div className="flex items-center gap-x-2 overflow-scroll py-4 my-2">
+    <div className="flex items-center gap-x-2 overflow-x-auto py-4 my-2">
       {categoryMovieID.length === 0 ? (
         <p>Loading ....</p>
       ) : (
